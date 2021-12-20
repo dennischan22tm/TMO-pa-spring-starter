@@ -4,7 +4,7 @@ public class Book {
 
     private Integer id;
     private String author;
-    private String year;
+    private String yearPublished;
     private String title;
 
     public Book() {}
@@ -13,7 +13,7 @@ public class Book {
         super();
         this.id = id;
         this.author = author;
-        this.year = year;
+        this.yearPublished = year;
         this.title = title;
     }
 
@@ -22,7 +22,7 @@ public class Book {
         sb.append("id: " + this.id + ",\n");
         sb.append("author: " + this.author + ",\n");
         sb.append("title: " + this.title + ",\n");
-        sb.append("year: " + this.year);
+        sb.append("year: " + this.yearPublished);
         return sb.toString();
     }
 
@@ -42,12 +42,12 @@ public class Book {
         this.author = author;
     }
 
-    public String getYear() {
-        return year;
+    public String getYearPublished() {
+        return yearPublished;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setYearPublished(String yearPublished) {
+        this.yearPublished = yearPublished;
     }
 
     public String getTitle() {

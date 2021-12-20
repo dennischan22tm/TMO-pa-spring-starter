@@ -7,12 +7,6 @@ public class BookDAO {
 
     private static Books list = new Books();
 
-    static {
-        list.getBooks().add(new Book(
-                1, "hung le", "2021", "cisco sucks"
-        ));
-    }
-
     public Books getAllBooks() {
         return list;
     }

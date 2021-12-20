@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * references:
+ *  https://www.geeksforgeeks.org/how-to-create-a-rest-api-using-java-spring-boot/
+ *  https://stackoverflow.com/questions/24292373/spring-boot-rest-controller-how-to-return-different-http-status-codes
+ */
+
 @RestController
 public class LibraryController {
 
