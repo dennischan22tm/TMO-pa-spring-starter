@@ -1,15 +1,15 @@
 package com.galvanize.tmo.paspringstarter;
 
-public class Book {
+public class Book implements Comparable<Book>{
 
     private Integer id;
     private String author;
-    private String yearPublished;
     private String title;
+    private Integer yearPublished;
 
     public Book() {}
 
-    public Book(Integer id, String author, String year, String title) {
+    public Book(Integer id, String author, Integer year, String title) {
         super();
         this.id = id;
         this.author = author;
@@ -17,13 +17,8 @@ public class Book {
         this.title = title;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("id: " + this.id + ",\n");
-        sb.append("author: " + this.author + ",\n");
-        sb.append("title: " + this.title + ",\n");
-        sb.append("year: " + this.yearPublished);
-        return sb.toString();
+    public int compareTo(Book book2) {
+        return this.title.compareTo(book2.title);
     }
 
     public Integer getId() {
@@ -42,11 +37,11 @@ public class Book {
         this.author = author;
     }
 
-    public String getYearPublished() {
+    public Integer getYearPublished() {
         return yearPublished;
     }
 
-    public void setYearPublished(String yearPublished) {
+    public void setYearPublished(Integer yearPublished) {
         this.yearPublished = yearPublished;
     }
 
