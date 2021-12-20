@@ -4,6 +4,8 @@ package com.galvanize.tmo.paspringstarter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
 public class LibraryController {
 
@@ -23,16 +25,18 @@ public class LibraryController {
     @PostMapping(path = "/api/books",
             consumes = "application/json",
             produces = "application/json")
-    public Book addBook(@RequestBody Book book) {
+    public Book addBook(@RequestBody Book book, HttpServletResponse response) {
         Integer id = bookDao.getAllBooks().getBooks().size()+1;
         book.setId(id);
         bookDao.addBook(book);
+        response.setStatus(HttpServletResponse.SC_CREATED);
         return book;
     }
 
     @DeleteMapping(path = "/api/books")
-    public String deleteBooks() {
+    public String deleteBooks(HttpServletResponse response) {
         bookDao.setBooksEmpty();
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         return "";
     }
 
